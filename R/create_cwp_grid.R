@@ -12,6 +12,7 @@
 #' @param ymin ymin of the output grid
 #' @param xmax xmax of the output grid
 #' @param ymax ymax of the output grid
+#' @param densify densify
 #' @param parallel run in parallel
 #' @param ... parallel options
 #' @return an object of class \code{sf}
@@ -24,7 +25,7 @@
 #'
 create_cwp_grid <- function(size = NULL, res = NULL,
                           xmin = NULL, ymin = NULL, xmax = NULL, ymax = NULL,
-                          parallel = FALSE, ...){
+                          densify = FALSE, parallel = FALSE, ...){
   
   applyHandler <- if(parallel) parallel::mclapply else lapply
   
@@ -73,7 +74,7 @@ create_cwp_grid <- function(size = NULL, res = NULL,
     sf::st_as_sf()
   
   #densify adding vertices each minute
-  sf <- add_vertices(sf, each = 1/60, parallel = parallel, ...)
+  if(densify) sf <- add_vertices(sf, each = 1/60, parallel = parallel, ...)
   
   #attributes (including grid coding)
   idx <- 0

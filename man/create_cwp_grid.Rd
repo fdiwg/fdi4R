@@ -11,6 +11,7 @@ create_cwp_grid(
   ymin = NULL,
   xmax = NULL,
   ymax = NULL,
+  densify = FALSE,
   parallel = FALSE,
   ...
 )
@@ -31,6 +32,8 @@ resolutions values are '10min_x_10min', '20min_x_20min', '30min_x_30min',
 \item{xmax}{xmax of the output grid}
 
 \item{ymax}{ymax of the output grid}
+
+\item{densify}{densify}
 
 \item{parallel}{run in parallel}
 
