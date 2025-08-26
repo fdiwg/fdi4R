@@ -1,4 +1,6 @@
-#' Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
+#' @title center_from_grid_code
+#' @description
+#'  Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
 #' Returns details about the center of a regular grid provided the grid code.
 #' Details include:
 #'     the center latitude / longitude (regardless of the fraction of ocean area in the grid)
