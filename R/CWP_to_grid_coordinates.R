@@ -1,4 +1,6 @@
-#'Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
+#' @title CWP_to_grid_coordinates
+#' @description
+#'  Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
 #'Converts a CWP grid code into its four boundary points (NW, NE, SW and SE)
 #'@param grid_code A CWP grid code
 #'@return a data table containing the coordinates (LAT, LON) of each of the four boundary points for the grid

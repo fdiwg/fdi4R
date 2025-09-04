@@ -2,8 +2,7 @@
 % Please edit documentation in R/CWP_to_grid_coordinates.R
 \name{CWP_to_grid_coordinates}
 \alias{CWP_to_grid_coordinates}
-\title{Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
-Converts a CWP grid code into its four boundary points (NW, NE, SW and SE)}
+\title{CWP_to_grid_coordinates}
 \usage{
 CWP_to_grid_coordinates(grid_code)
 }

@@ -2,8 +2,7 @@
 % Please edit documentation in R/convert_to_CWP_grid.R
 \name{convert_to_CWP_grid}
 \alias{convert_to_CWP_grid}
-\title{Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
-Converts a pair of decimal coordinate into a CWP grid code for a specific grid type}
+\title{convert_to_CWP_grid}
 \usage{
 convert_to_CWP_grid(lon, lat, grid_type_code = grid_5x5)
 }

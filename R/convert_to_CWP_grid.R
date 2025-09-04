@@ -1,3 +1,5 @@
+#' @title convert_to_CWP_grid
+#' @description
 #'Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
 #'Converts a pair of decimal coordinate into a CWP grid code for a specific grid type
 #'@param lon Longitude (decimal coordinates)

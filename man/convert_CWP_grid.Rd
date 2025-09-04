@@ -2,8 +2,7 @@
 % Please edit documentation in R/convert_CWP_grid.R
 \name{convert_CWP_grid}
 \alias{convert_CWP_grid}
-\title{Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
-Converts a CWP grid code into another CWP grid code of a given type}
+\title{convert_CWP_grid}
 \usage{
 convert_CWP_grid(grid_code, target_grid_type_code = grid_1x1)
 }

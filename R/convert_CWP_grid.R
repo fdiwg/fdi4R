@@ -1,3 +1,5 @@
+#' @title convert_CWP_grid
+#' @description
 #'Function copied from iotc_core_gis_cwp_utils (https://github.com/iotc-secretariat/iotc-lib-core-gis-cwp/blob/master/R/iotc_core_gis_cwp_utils.R)
 #'Converts a CWP grid code into another CWP grid code of a given type
 #'@param grid_code A CWP grid code
