@@ -11,7 +11,7 @@
 #'
 get_WoRMS_AphiaID <- function(name){
   aphiaID = NA
-  raw_res = try(worrms::wm_records_taxamatch(name = name, useragent = paste0("fdi4R_", uuid::UUIDgenerate())))
+  raw_res = try(worrms::wm_records_taxamatch(name = name, marine_only = FALSE, useragent = paste0("fdi4R_", uuid::UUIDgenerate())))
   if(!is(raw_res, "try-error")){
     aphiaID = raw_res[[1]]$AphiaID[1]
   }
