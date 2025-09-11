@@ -23,18 +23,18 @@ create_geodesic_buffer <- function(features,
   buffer_point <- function(coord, radius, n_segs) {
     bearings <- seq(0, 360, length.out = n_segs)
     pts <- geosphere::destPoint(coord, bearings, radius)
-    st_polygon(list(pts))
+    sf::st_polygon(list(pts))
   }
   
   # Buffer each vertex
-  vertices <- st_coordinates(features)[,1:2]
+  vertices <- sf::st_coordinates(features)[,1:2]
   buffers <- lapply(1:nrow(vertices), function(i) {
-    st_sfc(buffer_point(vertices[i,], distance, n_segments), crs=4326)
+    sf::st_sfc(buffer_point(vertices[i,], distance, n_segments), crs=4326)
   })
   
   # Union all buffers and the original polygon
   all_geoms <- sf::st_sfc(do.call(c, buffers))
-  buffered <- st_union(st_make_valid(all_geoms))
+  buffered <- sf::st_union(sf::st_make_valid(all_geoms))
   buffered_diff <- sf::st_difference(buffered, features)
   return(buffered_diff)
 }
