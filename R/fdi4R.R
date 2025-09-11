@@ -4,6 +4,7 @@
 #'
 #' @import sf
 #' @import geosphere
+#' @import worrms
 #' @import parallel
 #'
 #' @name fdi4R
