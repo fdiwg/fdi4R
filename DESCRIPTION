@@ -1,7 +1,7 @@
 Package: fdi4R
 Version: 0.1
-Date: 2023-04-07
-Title: Set of unctions used in support of fisheries data interoperability case studies
+Date: 2025-09-11
+Title: Set of functions used in support of fisheries data interoperability case studies
 Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Depends: R (>= 4.0), tidyr, sf, lwgeom, terra
@@ -11,4 +11,4 @@ Description: Set of functions in support of fisheries data interoperability case
 License: MIT
 URL: https://github.com/fdiwg/fdi4R
 BugReports: https://github.com/fdiwg/fdi4R/issues
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2

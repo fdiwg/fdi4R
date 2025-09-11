@@ -2,10 +2,19 @@
 % Please edit documentation in R/fdi4R.R
 \docType{package}
 \name{fdi4R}
+\alias{fdi4R-package}
 \alias{fdi4R}
 \title{Tools for data processing in support of fisheries data interoperability operations}
 \description{
 fdi4R provides a set of utility tools to do data processing in support of fisheries data interoperability operations
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/fdiwg/fdi4R}
+  \item Report bugs at \url{https://github.com/fdiwg/fdi4R/issues}
+}
+
 }
 \author{
 Emmanuel Blondel \email{emmanuel.blondel1@gmail.com}
