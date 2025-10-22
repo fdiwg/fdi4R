@@ -2,6 +2,7 @@
 
 export(CWP_to_grid_coordinates)
 export(add_vertices)
+export(bbox_to_sf)
 export(bearing_between_vertices)
 export(center_from_grid_code)
 export(convert_CWP_grid)
