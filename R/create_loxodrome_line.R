@@ -10,6 +10,7 @@
 #' @export
 #'
 create_loxodrome_line = function(features, distance = 1852){
+  
   coords = sf::st_coordinates(features)
   points = sf::st_sfc(sf::st_point(coords[1,1:2]), sf::st_point(coords[nrow(coords),1:2]), crs = 4326)
   point1 = as(points[1,],"Spatial")
@@ -18,6 +19,14 @@ create_loxodrome_line = function(features, distance = 1852){
   # Compute rhumb bearing and distance
   lox_bearing <- geosphere::bearingRhumb(point1, point2)
   lox_distance <- geosphere::distRhumb(point1, point2)
+  
+  if(lox_distance < distance){
+    warning(
+      sprintf("Features length (%s m) is < to distance (%s [m]). Return input feature geometry set",
+              lox_distance, distance)
+    )
+    return(sf::st_as_sfc(features))
+  }
   
   # Create sequence of points along the loxodrome
   n_points <- round(lox_distance / distance) + 1
