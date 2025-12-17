@@ -28,56 +28,89 @@ WFS_UNFAO_NFI <- ows4R::WFSClient$new(
 
 #UN layers of interest
 #un_continent_nopole_lowres
-un_continent_nopole_lowres = get_baselayer(WFS_UNFAO_NFI, "continent_nopole", "fifao:UN_CONTINENT2_NOPOLE", crs ="+proj=eck4") |> sf::st_make_valid()
+un_continent_nopole_lowres = get_baselayer(WFS_UNFAO_NFI, "continent_nopole", "fifao:UN_CONTINENT2_NOPOLE") |> sf::st_make_valid()
+un_continent_nopole_lowres_eck4 = un_continent_nopole_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_continent_nopole_lowres, overwrite = TRUE)
+usethis::use_data(un_continent_nopole_lowres_eck4, overwrite = TRUE)
 #un_continent_lowres
-un_continent_lowres = get_baselayer(WFS_UNFAO_NFI, "continent", "fifao:UN_CONTINENT2", crs = "+proj=eck4") |> sf::st_make_valid()
+un_continent_lowres = get_baselayer(WFS_UNFAO_NFI, "continent", "fifao:UN_CONTINENT2") |> sf::st_make_valid()
+un_continent_lowres_eck4 = un_continent_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_continent_lowres, overwrite = TRUE)
+usethis::use_data(un_continent_lowres_eck4, overwrite = TRUE)
 #un_countries
-un_countries = get_baselayer(WFS_UNFAO_NFI, "countries", "fifao:country_bounds", crs = "+proj=eck4") |> sf::st_make_valid()
+un_countries = get_baselayer(WFS_UNFAO_NFI, "countries", "fifao:country_bounds") |> sf::st_make_valid()
+un_countries_eck4 = un_countries |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_countries, overwrite = TRUE)
+usethis::use_data(un_countries_eck4, overwrite = TRUE)
 #un_countries_lowres
-un_countries_lowres = get_baselayer(WFS_UNFAO_NFI, "countries_lowres", "fifao:country_bounds_legacy", crs = "+proj=eck4") |> sf::st_make_valid()
+un_countries_lowres = get_baselayer(WFS_UNFAO_NFI, "countries_lowres", "fifao:country_bounds_legacy") |> sf::st_make_valid()
+un_countries_lowres_eck4 = un_countries_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 un_countries_lowres <- rbind(
   un_countries_lowres[is.na(un_countries_lowres$ISO_3),],
   un_countries_lowres[!is.na(un_countries_lowres$ISO_3) & un_countries_lowres$ISO_3 != "EUR",]
 )
+un_countries_lowres_eck4 <- rbind(
+  un_countries_lowres_eck4[is.na(un_countries_lowres_eck4$ISO_3),],
+  un_countries_lowres_eck4[!is.na(un_countries_lowres_eck4$ISO_3) & un_countries_lowres_eck4$ISO_3 != "EUR",]
+)
 usethis::use_data(un_countries_lowres, overwrite = TRUE)
+usethis::use_data(un_countries_lowres_eck4, overwrite = TRUE)
 #un_boundaries
-un_boundaries = get_baselayer(WFS_UNFAO_NFI, "boundaries", "fifao:UN_intbnd", crs = "+proj=eck4") |> sf::st_make_valid()
+un_boundaries = get_baselayer(WFS_UNFAO_NFI, "boundaries", "fifao:UN_intbnd") |> sf::st_make_valid()
+un_boundaries_eck4 = un_boundaries |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_boundaries, overwrite = TRUE)
+usethis::use_data(un_boundaries_eck4, overwrite = TRUE)
 #un_boundaries_lowres
-un_boundaries_lowres = get_baselayer(WFS_UNFAO_NFI, "boundaries_lowres", "fifao:UN_intbnd_legacy", crs = "+proj=eck4") |> sf::st_make_valid()
+un_boundaries_lowres = get_baselayer(WFS_UNFAO_NFI, "boundaries_lowres", "fifao:UN_intbnd_legacy") |> sf::st_make_valid()
+un_boundaries_lowres_eck4 = un_boundaries_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_boundaries_lowres, overwrite = TRUE)
+usethis::use_data(un_boundaries_lowres_eck4, overwrite = TRUE)
 #un_water_bodies
-un_water_bodies = get_baselayer(WFS_UNFAO_NFI, "WBYA25", "fifao:WBYA25", crs = "+proj=eck4") |> sf::st_make_valid()
+un_water_bodies = get_baselayer(WFS_UNFAO_NFI, "WBYA25", "fifao:WBYA25") |> sf::st_make_valid()
+un_water_bodies_eck4 = un_water_bodies |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_water_bodies, overwrite = TRUE)
+usethis::use_data(un_water_bodies_eck4, overwrite = TRUE)
 #un_sdg_regions
-un_sdg_regions = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions", "fifao:cl_un_sdg_regions", crs = "+proj=eck4") |> sf::st_make_valid()
+un_sdg_regions = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions", "fifao:cl_un_sdg_regions") |> sf::st_make_valid()
+un_sdg_regions_eck4 = un_sdg_regions |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(un_sdg_regions, overwrite = TRUE)
+usethis::use_data(un_sdg_regions_eck4, overwrite = TRUE)
 #un_sdg_regions_lowres
-un_sdg_regions_lowres = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions_lowres", "fifao:cl_un_sdg_regions_lowres", crs = "+proj=eck4") |> sf::st_make_valid()
+un_sdg_regions_lowres = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions_lowres", "fifao:cl_un_sdg_regions_lowres") |> sf::st_make_valid()
+un_sdg_regions_lowres_eck4 = un_sdg_regions_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid() 
 usethis::use_data(un_sdg_regions_lowres, overwrite = TRUE)
+usethis::use_data(un_sdg_regions_lowres_eck4, overwrite = TRUE)
 #un_sdg_regions_placemarks
-un_sdg_regions_placemarks = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions_placemarks", "fifao:cl_un_sdg_regions_placemarks", crs = "+proj=eck4") |> sf::st_make_valid()
+un_sdg_regions_placemarks = get_baselayer(WFS_UNFAO_NFI, "un_sdg_regions_placemarks", "fifao:cl_un_sdg_regions_placemarks") |> sf::st_make_valid()
+un_sdg_regions_placemarks_eck4 = un_sdg_regions_placemarks |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid() 
 usethis::use_data(un_sdg_regions_placemarks, overwrite = TRUE)
+usethis::use_data(un_sdg_regions_placemarks_eck4, overwrite = TRUE)
 
 #FAO layers of interest
 
 #fao_areas
-fao_areas = get_baselayer(WFS_UNFAO_NFI, "fao_areas", "fifao:FAO_AREAS_ERASE_LOWRES", crs = "+proj=eck4") |> sf::st_make_valid()
+fao_areas = get_baselayer(WFS_UNFAO_NFI, "fao_areas", "fifao:FAO_AREAS_ERASE_LOWRES") |> sf::st_make_valid()
+fao_areas_eck4 = fao_areas |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(fao_areas, overwrite = TRUE)
+usethis::use_data(fao_areas_eck4, overwrite = TRUE)
 #fao_areas_inland
-fao_areas_inland = get_baselayer(WFS_UNFAO_NFI, "fao_areas_inland", "fifao:FAO_AREAS_INLAND", crs = "+proj=eck4") |> sf::st_make_valid()
+fao_areas_inland = get_baselayer(WFS_UNFAO_NFI, "fao_areas_inland", "fifao:FAO_AREAS_INLAND") |> sf::st_make_valid()
+fao_areas_inland_eck4 = fao_areas_inland |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(fao_areas_inland, overwrite = TRUE)
+usethis::use_data(fao_areas_inland_eck4, overwrite = TRUE)
 #fao_areas_lines
-fao_areas_lines = get_baselayer(WFS_UNFAO_NFI, "fao_areas_lines", "fifao:FAO_MAJOR_Lines_ERASE", crs = "+proj=eck4") |> sf::st_make_valid()
+fao_areas_lines = get_baselayer(WFS_UNFAO_NFI, "fao_areas_lines", "fifao:FAO_MAJOR_Lines_ERASE") |> sf::st_make_valid()
+fao_areas_lines_eck4 = fao_areas_lines |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(fao_areas_lines, overwrite = TRUE)
+usethis::use_data(fao_areas_lines_eck4, overwrite = TRUE)
 #fao_areas_lowres
-fao_areas_lowres = get_baselayer(WFS_UNFAO_NFI, "fao_major_areas", "fifao:FAO_AREAS_ERASE_LOWRES", crs = "+proj=eck4") |> sf::st_make_valid()
+fao_areas_lowres = get_baselayer(WFS_UNFAO_NFI, "fao_major_areas", "fifao:FAO_AREAS_ERASE_LOWRES") |> sf::st_make_valid()
+fao_areas_lowres_eck4 = fao_areas_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(fao_areas_lowres, overwrite = TRUE)
+usethis::use_data(fao_areas_lowres_eck4, overwrite = TRUE)
 #fao_major_areas_lowres
 fao_major_areas_lowres = fao_areas_lowres[fao_areas_lowres$F_LEVEL == 'MAJOR',]
+fao_major_areas_lowres_eck4 = fao_areas_lowres_eck4[fao_areas_lowres_eck4$F_LEVEL == 'MAJOR',]
 usethis::use_data(fao_major_areas_lowres, overwrite = TRUE)
-
+usethis::use_data(fao_major_areas_lowres_eck4, overwrite = TRUE)
 
