@@ -113,3 +113,11 @@ fao_major_areas_lowres = fao_areas_lowres[fao_areas_lowres$F_LEVEL == 'MAJOR',]
 fao_major_areas_lowres_eck4 = fao_areas_lowres_eck4[fao_areas_lowres_eck4$F_LEVEL == 'MAJOR',]
 usethis::use_data(fao_major_areas_lowres, overwrite = TRUE)
 usethis::use_data(fao_major_areas_lowres_eck4, overwrite = TRUE)
+
+#ICCAT layers of interest
+
+#sampling areas
+iccat_sampling_areas_lowres = get_baselayer(WFS_UNFAO_NFI, "iccat:iccat_sa_lowres") |> sf::st_make_valid()
+iccat_sampling_areas_lowres_eck4 = iccat_sampling_areas_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
+usethis::use_data(iccat_sampling_areas_lowres, overwrite = TRUE)
+usethis::use_data(iccat_sampling_areas_lowres_eck4, overwrite = TRUE)
