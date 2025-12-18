@@ -8,6 +8,8 @@ cl_iccat_gear_type = readr::read_csv("../fdi-codelists/regional/iccat/cl_gear_ty
 usethis::use_data(cl_iccat_gear_type, overwrite = TRUE)
 mapping_iccat_sampling_areas__x__stocks = readr::read_csv("../fdi-mappings/regional-to-regional/iccat/codelist_mapping_iccat_sampling_areas_iccat_stocks.csv")
 usethis::use_data(mapping_iccat_sampling_areas__x__stocks, overwrite = TRUE)
+mapping_iccat_species__x__stocks = readr::read_csv("../fdi-mappings/regional-to-regional/iccat/codelist_mapping_iccat_species_iccat_stocks.csv")
+usethis::use_data(mapping_iccat_species__x__stocks, overwrite = TRUE)
 
 #WECAFC
 cl_wecafc_species = readr::read_csv("../fdi-codelists/regional/wecafc/cl_species.csv")
