@@ -114,6 +114,12 @@ fao_major_areas_lowres_eck4 = fao_areas_lowres_eck4[fao_areas_lowres_eck4$F_LEVE
 usethis::use_data(fao_major_areas_lowres, overwrite = TRUE)
 usethis::use_data(fao_major_areas_lowres_eck4, overwrite = TRUE)
 
+#CWP layers of interests
+wja_level0 = get_baselayer(WFS_UNFAO_NFI, "cwp:wja_level0") |> sf::st_make_valid()
+wja_level0_eck4 = wja_level0 |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
+usethis::use_data(wja_level0, overwrite = TRUE)
+usethis::use_data(wja_level0_eck4, overwrite = TRUE)
+
 #ICCAT layers of interest
 
 #sampling areas
