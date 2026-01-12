@@ -1,5 +1,11 @@
 require(readr)
 
+#GLOBAL CODELISTS
+cl_asfis_species = readr::read_csv("../fdi-codelists/global/cwp/cl_asfis_species.csv")
+usethis::use_data(cl_asfis_species, overwrite = TRUE)
+cl_asfis_species_enriched_with_worms = readr::read_csv("../fdi-codelists/global/cwp/cl_asfis_species_enriched_with_worms.csv")
+usethis::use_data(cl_asfis_species_enriched_with_worms, overwrite = TRUE)
+
 #regional codelists for multi-reporting purpose
 #ICCAT
 cl_iccat_species = readr::read_csv("../fdi-codelists/regional/iccat/cl_species.csv")
