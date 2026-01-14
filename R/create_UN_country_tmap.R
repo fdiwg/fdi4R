@@ -22,7 +22,7 @@ create_UN_country_tmap <- function(iso3, preview = FALSE){
   dotted_lines <- filtered[filtered$TYPE %in% c(8, 9), ]
   
   # polygon for selected country (light grey, no border)
-  poly_sel <- country_polys[country_polys$ISO_3 == iso3, ]
+  poly_sel <- polygons[polygons$ISO_3 == iso3, ]
   
   # Start with empty map
   map <- NULL
