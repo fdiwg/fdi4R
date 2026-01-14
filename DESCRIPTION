@@ -4,8 +4,8 @@ Date: 2025-12-02
 Title: Set of functions used in support of fisheries data interoperability case studies
 Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
-Depends: R (>= 4.0), tidyr, sf, lwgeom, terra
-Imports: methods, sf
+Depends: R (>= 4.0)
+Imports: methods, parallel, tidyr, sf, lwgeom, terra, geosphere, tmap, worrms
 Suggests: testthat, usethis
 Description: Set of functions in support of fisheries data interoperability case studies
 License: MIT
