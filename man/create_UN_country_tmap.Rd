@@ -4,10 +4,12 @@
 \alias{create_UN_country_tmap}
 \title{create_UN_country_tmap}
 \usage{
-create_UN_country_tmap(iso3)
+create_UN_country_tmap(iso3, preview = FALSE)
 }
 \arguments{
 \item{iso3}{country code}
+
+\item{preview}{preview as dynamic map}
 }
 \value{
 an object of class \link[tmap]{tmap}

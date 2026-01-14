@@ -3,12 +3,13 @@
 #' @description Creates a UN country tmap
 #' 
 #' @param iso3 country code
+#' @param preview preview as dynamic map
 #' @return an object of class \link[tmap]{tmap}
 #' 
 #' @author Arturo Muñoz Albero
 #' @export
 #'
-create_UN_country_tmap <- function(iso3){
+create_UN_country_tmap <- function(iso3, preview = FALSE){
   lines = fdi4R::un_boundaries
   polygons = fdi4R::un_countries
   
@@ -25,6 +26,7 @@ create_UN_country_tmap <- function(iso3){
   
   # Start with empty map
   map <- NULL
+  if(preview) tmap_mode("view")
   
   # Add layers only if not empty
   if (nrow(poly_sel) > 0) {
