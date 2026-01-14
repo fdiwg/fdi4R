@@ -17,3 +17,5 @@ intersections = do.call(rbind, lapply(int_layers, function(int_layer){
 intersections$gml_id = NULL
 intersections$geom = NULL
 usethis::use_data(intersections, overwrite = TRUE)
+
+#selection of intersections
