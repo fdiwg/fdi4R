@@ -16,5 +16,5 @@ an object of class \link[tmap]{tmap}
 Creates a UN country tmap
 }
 \author{
-Emmanuel Blondel \email{emmanuel.blondel1@gmail.com}
+Arturo Muñoz Albero
 }

@@ -1,8 +1,9 @@
 Package: fdi4R
 Version: 0.1
-Date: 2025-12-02
+Date: 2026-10-14
 Title: Set of functions used in support of fisheries data interoperability case studies
-Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
+Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")),
+  person("Arturo", "Muñoz Albero", role = c("ctb")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Depends: R (>= 4.0)
 Imports: methods, parallel, tidyr, sf, lwgeom, terra, geosphere, tmap, worrms
@@ -12,4 +13,5 @@ License: MIT
 URL: https://github.com/fdiwg/fdi4R
 BugReports: https://github.com/fdiwg/fdi4R/issues
 RoxygenNote: 7.3.3
+Encoding: UTF-8
 LazyData: true

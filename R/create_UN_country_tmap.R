@@ -5,7 +5,7 @@
 #' @param iso3 country code
 #' @return an object of class \link[tmap]{tmap}
 #' 
-#' @author Emmanuel Blondel \email{emmanuel.blondel1@@gmail.com}
+#' @author Arturo Muñoz Albero
 #' @export
 #'
 create_UN_country_tmap <- function(iso3){
