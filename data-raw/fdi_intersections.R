@@ -19,5 +19,9 @@ intersections$geom = NULL
 usethis::use_data(intersections, overwrite = TRUE)
 
 #selection of intersections
+#FAO/CWP
 wja_level1__x__rfb_comp = WFS_UNFAO_NFI$getFeatures("int:wja_level1__x__rfb_comp") %>% sf::st_make_valid()
 usethis::use_data(wja_level1__x__rfb_comp, overwrite = TRUE)
+#IOTC
+wja_level1__x__iotc_indian_ocean_areas = WFS_UNFAO_NFI$getFeatures("int:wja_level1__x__iotc_indian_ocean_areas") %>% sf::st_make_valid()
+usethis::use_data(wja_level1__x__iotc_indian_ocean_areas, overwrite = TRUE)
