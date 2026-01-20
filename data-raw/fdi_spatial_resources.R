@@ -22,7 +22,7 @@ get_baselayer <- function(wfs, layer, cql_filter = NULL, crs = NULL){
 #ows4R connector for FAO/NFI
 WFS_UNFAO_NFI <- ows4R::WFSClient$new(
   url = "https://www.fao.org/fishery/geoserver/wfs",
-  serviceVersion = "1.0.0",
+  serviceVersion = "1.0.0", user = Sys.getenv("GS_USER"), pwd = Sys.getenv("GS_PWD"),
   logger = "INFO"
 )
 
@@ -119,6 +119,11 @@ wja_level0 = get_baselayer(WFS_UNFAO_NFI, "cwp:wja_level0") |> sf::st_make_valid
 wja_level0_eck4 = wja_level0 |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(wja_level0, overwrite = TRUE)
 usethis::use_data(wja_level0_eck4, overwrite = TRUE)
+
+wja_level1 = get_baselayer(WFS_UNFAO_NFI, "cwp:wja_level1") |> sf::st_make_valid()
+wja_level1_eck4 = wja_level1 |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
+usethis::use_data(wja_level1, overwrite = TRUE)
+usethis::use_data(wja_level1_eck4, overwrite = TRUE)
 
 #ICCAT layers of interest
 
