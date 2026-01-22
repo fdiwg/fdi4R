@@ -132,3 +132,10 @@ iccat_sampling_areas_lowres = get_baselayer(WFS_UNFAO_NFI, "iccat:iccat_sa_lowre
 iccat_sampling_areas_lowres_eck4 = iccat_sampling_areas_lowres |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
 usethis::use_data(iccat_sampling_areas_lowres, overwrite = TRUE)
 usethis::use_data(iccat_sampling_areas_lowres_eck4, overwrite = TRUE)
+
+#IOTC layers of interest
+#eur_iotc_cpc
+wja_level1_eur_iotc_cpc = get_baselayer(WFS_UNFAO_NFI, "cwp:wja_level1_eur_iotc_cpc") |> sf::st_make_valid()
+wja_level1_eur_iotc_cpc_eck4 = wja_level1_eur_iotc_cpc |> sf::st_transform(crs = "+proj=eck4") |> sf::st_make_valid()
+usethis::use_data(wja_level1_eur_iotc_cpc, overwrite = TRUE)
+usethis::use_data(wja_level1_eur_iotc_cpc_eck4, overwrite = TRUE)

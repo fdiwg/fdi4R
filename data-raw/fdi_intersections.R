@@ -5,7 +5,8 @@ require(usethis)
 #ows4R connector for FAO/NFI intersections
 WFS_UNFAO_NFI <- ows4R::WFSClient$new(
   url = "https://www.fao.org/fishery/geoserver/int/wfs",
-  serviceVersion = "1.0.0",
+  serviceVersion = "1.0.0", 
+  user = Sys.getenv("GS_USER"), pwd = Sys.getenv("GS_PWD"),
   logger = "INFO"
 )
 
