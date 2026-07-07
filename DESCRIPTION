@@ -1,6 +1,6 @@
 Package: fdi4R
-Version: 0.1
-Date: 2026-10-14
+Version: 0.1.20260707
+Date: 2026-07-07
 Title: Set of functions used in support of fisheries data interoperability case studies
 Authors@R: c(person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")),
   person("Arturo", "Muñoz Albero", role = c("ctb")))
